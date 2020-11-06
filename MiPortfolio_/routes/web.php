@@ -14,5 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('cvgrid');
 });
+
+Route::get('nombreApellido', function(){
+    return 'Lujan Cuellar';
+});
+
+Route::get("Apellido/{Apellido}", function($Apellido){
+    if($Apellido == "Cuellar") {
+        return "Bienvenido". $Apellido;
+    } else {
+        abort(404, "La ruta no existe");
+    }
+});
+
+
